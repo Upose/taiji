@@ -14,7 +14,10 @@ const item1Active = ref('1')
   <section>
     <card-title-left title="人员管理" />
     <card-container class="my-35px">
-      <card-inside-title :icon="UserIcon" title="今日出勤情况" />
+      <card-inside-title
+        :icon="UserIcon"
+        title="今日出勤情况"
+      />
       <div class="h-147px flex items-center mb-24px">
         <img
           src="@/assets/images/card/user-manage.png"
@@ -28,27 +31,44 @@ const item1Active = ref('1')
           </div>
           <div class="flex h-24px items-center justify-between w-full mt-34px">
             <p>出勤率</p>
-            <div class="flex-1 mx-62px h-24px">
+            <div class="flex-1 mx-22px h-30px transform scale-85 mt-5px">
               <chart-attend-rate />
             </div>
             <p><b class="text-28px text-white">99.2</b>&nbsp;%</p>
           </div>
         </div>
       </div>
-      <card-inside-title :icon="UserIcon" title="人员相关指标" />
-      <div class="flex mt-31px">
-        <div class="w-156px h-211px">
-          <ul class="flex flex-col gap-28px">
+      <card-inside-title
+        :icon="UserIcon"
+        title="人员相关指标"
+      />
+      <div class="flex flex-shrink-0 mt-31px h-215px">
+        <div class="w-156px mr-28px">
+          <ul class="flex flex-col gap-18px">
             <li
-              class="text-14px rounded-7px border-1 flex items-center p-8px text-[rgba(255,255,255,0.6)] bg-[rgba(255,255,255,0.05)]"
-            :class="{ 'border-[#4EFEE9] text-[#4EFEE9]': item1Active === item.value }"
+              class="text-14px duration-300 rounded-7px border-1 flex items-center p-8px text-[rgba(255,255,255,0.6)] bg-[rgba(255,255,255,0.05)] hover:(cursor-pointer border-[#4EFEE9] text-[#4EFEE9])"
+              :class="{ 'border-[#4EFEE9] text-[#4EFEE9]': item1Active === item.value }"
               v-for="item in items1"
               :key="item.value"
+              @click="item1Active = item.value"
             >
-            <svg v-if="item.value === item1Active" xmlns="http://www.w3.org/2000/svg" width="15" height="16" viewBox="0 0 15 16" fill="none">
-              <path d="M7.27734 2C3.96534 2 1.27734 4.688 1.27734 8C1.27734 11.312 3.96534 14 7.27734 14C10.5893 14 13.2773 11.312 13.2773 8C13.2773 4.688 10.5893 2 7.27734 2ZM7.27734 12.8C4.62534 12.8 2.47734 10.652 2.47734 8C2.47734 5.348 4.62534 3.2 7.27734 3.2C9.92934 3.2 12.0773 5.348 12.0773 8C12.0773 10.652 9.92934 12.8 7.27734 12.8Z" fill="#4EFEE9"/>
-              <path d="M7.27734 11C8.9342 11 10.2773 9.65685 10.2773 8C10.2773 6.34315 8.9342 5 7.27734 5C5.62049 5 4.27734 6.34315 4.27734 8C4.27734 9.65685 5.62049 11 7.27734 11Z" fill="#4EFEE9"/>
-            </svg>
+              <svg
+                v-if="item.value === item1Active"
+                xmlns="http://www.w3.org/2000/svg"
+                width="15"
+                height="16"
+                viewBox="0 0 15 16"
+                fill="none"
+              >
+                <path
+                  d="M7.27734 2C3.96534 2 1.27734 4.688 1.27734 8C1.27734 11.312 3.96534 14 7.27734 14C10.5893 14 13.2773 11.312 13.2773 8C13.2773 4.688 10.5893 2 7.27734 2ZM7.27734 12.8C4.62534 12.8 2.47734 10.652 2.47734 8C2.47734 5.348 4.62534 3.2 7.27734 3.2C9.92934 3.2 12.0773 5.348 12.0773 8C12.0773 10.652 9.92934 12.8 7.27734 12.8Z"
+                  fill="#4EFEE9"
+                />
+                <path
+                  d="M7.27734 11C8.9342 11 10.2773 9.65685 10.2773 8C10.2773 6.34315 8.9342 5 7.27734 5C5.62049 5 4.27734 6.34315 4.27734 8C4.27734 9.65685 5.62049 11 7.27734 11Z"
+                  fill="#4EFEE9"
+                />
+              </svg>
               <svg
                 v-else
                 xmlns="http://www.w3.org/2000/svg"
@@ -67,6 +87,7 @@ const item1Active = ref('1')
             </li>
           </ul>
         </div>
+        <chart-person-manage class="h-full w-520px"/>
       </div>
     </card-container>
   </section>

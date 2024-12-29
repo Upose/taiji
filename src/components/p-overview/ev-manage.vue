@@ -15,24 +15,30 @@ const item1Active = ref('1')
     <card-title-right title="环境管理" />
     <card-container transform height="491px" class="my-35px">
       <card-inside-title :icon="Icon" title="实验室环境综合情况" />
-      <div class="h-147px flex items-center mb-24px">
-        <img
-          src="@/assets/images/card/eq-manage.png"
-          class="h-full mr-20px"
-          alt=""
-        />
-        <div class="flex justify-between items-center text-24px text-[rgba(255,255,255,0.6)]">
-          <div class="w-236px flex flex-col gap-y-32px">
-            <p class="text-22px">今日应到<b class="text-white text-24px ml-30px mr-11px">1234</b>人</p>
-            <p class="text-22px">今日实到<b class="text-[#95E4B0] text-24px ml-30px mr-11px">1234</b>人</p>
+      <div class="mt-34px">
+        <div class="flex justify-between gap-90px">
+          <div class="flex-1 dashboard-bg">
+            <chart-dashboard class="h-160px"/>
+            <div class="text-center text-20px text-white">因子1</div>
           </div>
-          <div class="flex-1 items-center justify-between w-full mt-34px">
-            <chart-attend-rate />
+          <div class="flex-1 dashboard-bg">
+            <chart-dashboard class="h-160px"/>
+            <div class="text-center text-20px text-white">因子1</div>
+          </div>
+          <div class="flex-1 dashboard-bg">
+            <chart-dashboard class="h-160px"/>
+            <div class="text-center text-20px text-white">因子1</div>
           </div>
         </div>
+        <chart-line class="h-150px mt-30px"/>
       </div>
     </card-container>
   </section>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.dashboard-bg {
+  background: url('@/assets/images/card/chart-dashboard-bg.png') no-repeat center/ 100% 80%;
+  background-position: 100% 0%;
+}
+</style>

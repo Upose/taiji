@@ -1,4 +1,4 @@
-<!-- 环境检测 -->
+<!-- 环境监测 -->
 <template>
   <div class="w-full h-full flex justify-between">
     <building-monitoring />
