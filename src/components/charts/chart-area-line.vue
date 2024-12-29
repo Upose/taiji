@@ -29,7 +29,7 @@ const props = defineProps({
           data: ['01', '02', '03', '04', '05', '06', '07'],
           axisLine: {
             lineStyle: {
-              color: '#ccc'
+              color:'rgba(255, 255, 255, 0.1)'
             }
           },
           axisLabel: {
@@ -44,7 +44,7 @@ const props = defineProps({
           },
           splitLine: {
             lineStyle: {
-              color: 'rgba(255, 255, 255, 0.2)'
+              color: 'rgba(255, 255, 255, 0.1)'
             }
           },
           axisLabel: {

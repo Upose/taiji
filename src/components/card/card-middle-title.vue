@@ -1,27 +1,26 @@
 <script setup>
 const props = defineProps({
-  menu: {
-    type: [],
-    default: () => {
-      return [
-        { label: '按科室', value: '1' },
-        { label: '按实验室', value: '2' },
-        { label: '重点实验室', value: '3' }
-      ]
-    }
+  data: {
+    type: Array,
+    default: () => []
   }
 })
 
 const active = ref('1')
+
+const change = (item) => {
+  active.value = item.value
+}
 </script>
 
 <template>
-  <ul class="menu mb-20px">
+  <ul class="menu">
     <li
       :class="{ active: item.value == active }"
       class="menu_item"
-      v-for="item in props.menu"
+      v-for="item in props.data"
       :key="item.value"
+      @click="change(item)"
     >
       <span class="z-1 relative">{{ item.label }}</span>
     </li>
@@ -33,14 +32,16 @@ const active = ref('1')
   width: 100%;
   font-size: 22px;
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
+  gap: 45px;
+  // padding: 45px 12px;
   color: rgba(255, 255, 255, 0.8);
-  gap: 14px;
   &_item {
     position: relative;
     text-align: center;
     line-height: 40px;
-    flex: 1;
+    // flex: 1;
+    min-width: 190px;
     height: 45px;
     cursor: pointer;
     background: url('@/assets/images/common/c-middle-title-bg1.png') no-repeat center center / 100% 100%;

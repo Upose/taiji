@@ -1,19 +1,18 @@
+<script setup>
+
+const currentDetailsId = ref('')
+
+const change = (id) => {
+  currentDetailsId.value = id
+}
+</script>
+
 <template>
-  <div class="box">
-    <div class="box-left">
-      <finish-status />
-      <!-- <img src="@/assets/pageImages/业务管理-left.png" alt=""> -->
+  <div class="w-full h-full flex justify-between">
+    <div>
+      <finish-status @change="change" v-show="!currentDetailsId"/>
+      <finish-status-details @change="change" v-show="currentDetailsId"/>
     </div>
-    <div class="box-right">
-      <img src="@/assets/pageImages/业务管理-right.png" alt="">
-    </div>
+    <pass-rate />
   </div>
 </template>
-<style lang="scss" scoped>
-.box{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-</style>

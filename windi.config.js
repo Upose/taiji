@@ -9,5 +9,7 @@ export default defineConfig({
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('windicss/plugin/scroll-snap'),
+  ],
 });
